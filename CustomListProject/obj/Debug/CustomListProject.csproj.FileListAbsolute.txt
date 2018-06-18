@@ -1,0 +1,7 @@
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\bin\Debug\CustomListProject.exe.config
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\bin\Debug\CustomListProject.exe
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\bin\Debug\CustomListProject.pdb
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\obj\Debug\CustomListProject.csprojAssemblyReference.cache
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\obj\Debug\CustomListProject.csproj.CoreCompileInputs.cache
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\obj\Debug\CustomListProject.exe
+C:\Users\Julia\Documents\projects\dcc projects\CustomListProject\CustomListProject\obj\Debug\CustomListProject.pdb
