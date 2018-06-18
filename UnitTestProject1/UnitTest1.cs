@@ -229,6 +229,45 @@ namespace UnitTestProject1
             // Assert
             Assert.IsTrue(expected == actual);
         }
+        [TestMethod]
+        public void Remove_ValueNotInList()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            bool expected = false;
+
+            // Act
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Remove(5);
+
+            bool actual = list.Remove(5);
+
+            // Assert
+            Assert.IsTrue(expected == actual);
+        }
+
+        [TestMethod]
+        public void Remove_NotInListCheckCount()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            bool expected = true;
+
+            // Act
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Remove(5);
+
+            bool actual = list.Count == 4;
+
+            // Assert
+            Assert.IsTrue(expected == actual);
+        }
     }
 }
         
