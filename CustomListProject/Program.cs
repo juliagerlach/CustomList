@@ -10,14 +10,14 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-            List<int> builtInList = new List<int>();
+            //List<int> builtInList = new List<int>();
             //builtInList.Add(15);
             //builtInList.Add(16);
             //builtInList.Add(17);
             //builtInList.Add(18);
             //builtInList.Add(19);
             //builtInList.Add(20);
-            builtInList.Remove(18);
+            //builtInList.Remove(18);
 
            
 

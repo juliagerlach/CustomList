@@ -115,6 +115,25 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void Remove_ReturnsTrue()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            bool expected = true;
+
+            // Act
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            
+            bool actual = list.Remove(4);
+
+            // Assert
+            Assert.IsTrue(expected == actual);
+        }
+
+        [TestMethod]
         public void Remove_CheckValueAtEndOfList()
         {
             //Arrange
@@ -149,15 +168,15 @@ namespace UnitTestProject1
             list.Add(4);
             list.Add(5);
             list.Add(6);
-            list.Remove(4);
-            bool actual = list[2] == 3;
+            list.Remove(2);
+            bool actual = list[2] == 4;
 
             // Assert
             Assert.IsTrue(expected == actual);
         }
 
         [TestMethod]
-        public void Remove_ValueCheckCount()
+        public void Remove_SingleInstanceOfValue()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();

@@ -53,10 +53,29 @@ namespace CustomListProject
             count++;
         }
 
-        public bool Remove(T itemToRemove)
+        public bool Remove(T item)
         {
-           
-            return true;
+            //if item already exists in list, remove it 
+            //shift remaining items to remove gaps
+            
+            for (int i = 0; i < count; i++)
+            {
+                if (array[i].Equals(item))
+                {
+                    count--;
+                    ShiftItems(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void ShiftItems(int currentIndex)
+        {
+            for (int i = currentIndex; i < count; i++)
+            {
+                array[i] = array[i + 1];
+            }
         }
     }
 }
