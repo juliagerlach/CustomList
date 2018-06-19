@@ -55,10 +55,6 @@ namespace CustomListProject
 
         public bool Remove(T item)
         {
-            //compare index to item to remove
-            //if item already exists in list, remove it 
-            //shift remaining items to remove gaps
-
             T[] reducedArray = new T[count];
 
             for (int i = 0; i < count; i++)
@@ -83,5 +79,10 @@ namespace CustomListProject
             }
             Array.Resize(ref array, array.Length - 1);
             }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

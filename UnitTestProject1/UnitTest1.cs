@@ -72,6 +72,21 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void Add_StringCheckValue()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>();
+            string expected = "hello";
+
+            // Act
+            list.Add("hello");
+            string actual = list[0];
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void Add_AddMultipleCheckLastIndex()
         {
             //Arrange
@@ -94,7 +109,6 @@ namespace UnitTestProject1
             // Assert
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void Remove_ReturnsTrue()
@@ -222,42 +236,45 @@ namespace UnitTestProject1
             // Assert
             Assert.IsTrue(expected == actual);
         }
+
+        [TestMethod]
+        public void Remove_StringReturnsTrue()
+        {
+            //Arrange
+            CustomList<string> list = new CustomList<string>();
+            bool expected = true;
+
+            // Act
+            list.Add("hello");
+            list.Add("good");
+            list.Add("day");
+            list.Add("to you");
+
+            bool actual = list.Remove("to you");
+
+            // Assert
+            Assert.IsTrue(expected == actual);
+        }
+
+        [TestMethod]
+        public void ToStringOverride_InfoHereAboutTest()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+
+            // Act
+            
+
+            // Assert
+            
+        }
     }
 }
         
       
         
        
-//            List<int> numbers = new List<int>();
-//            count = 3;
-//            capacity = 4;
-//            numbers[0] = 1;
-//            numbers[1] = 2;
-//            numbers[2] = 3;
-            
-//            if (count == capacity)
-//            {capacity += 4;
-//            int[] myList = new int[capacity];
 
-//            for (int i = 0; i<count; i++)
-//            {
-//            newList[i] = myList[i];
-//            }
-
-//            myList = newList;
-//            myList[count] = item;
-//            count++;
-
-//            else
-//            {
-//            myList[count] = item;
-//            count++;
-//            }
-//actualResult = Console.WriteLine[3]; }
         
         
-        
-//            //Assert - test that data gets added to the correct 
-//            Assert.AreEqual(expectedResult, actualResult); 
-//       }
-//}
+    
