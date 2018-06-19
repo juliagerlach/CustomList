@@ -95,24 +95,6 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Remove_CountGoesDown()
-        {
-            //Arrange
-            CustomList<int> list = new CustomList<int>();
-            bool expected = true;
-
-            // Act
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Remove(4);
-            bool actual = list.Count == 3;
-
-            // Assert
-            Assert.IsTrue(expected == actual);
-        }
 
         [TestMethod]
         public void Remove_ReturnsTrue()
@@ -194,41 +176,12 @@ namespace UnitTestProject1
             list.Add(7);
             list.Add(8);
             list.Remove(3);
-            bool actual = list.Count == 9;
+            bool actual = list[2] == 4;
 
             // Assert
             Assert.IsTrue(expected == actual);
         }
 
-        [TestMethod]
-        public void Remove_MultipleCheckCount()
-        {
-            //Arrange
-            CustomList<int> list = new CustomList<int>();
-            bool expected = true;
-
-            // Act
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Add(5);
-            list.Add(6);
-            list.Add(7);
-            list.Add(8);
-            list.Add(9);
-            list.Add(10);
-            list.Add(11);
-            list.Add(12);
-            list.Remove(4);
-            list.Remove(5);
-            list.Remove(6);
-            list.Remove(7);
-            bool actual = list.Count == 8;
-
-            // Assert
-            Assert.IsTrue(expected == actual);
-        }
         [TestMethod]
         public void Remove_ValueNotInList()
         {
@@ -250,7 +203,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void Remove_NotInListCheckCount()
+        public void Remove_CheckValueBeyondCount()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
@@ -261,9 +214,10 @@ namespace UnitTestProject1
             list.Add(2);
             list.Add(3);
             list.Add(4);
-            list.Remove(5);
+            list.Add(5);
+            list.Remove(1);
 
-            bool actual = list.Count == 4;
+            bool actual = list[4] == 0;
 
             // Assert
             Assert.IsTrue(expected == actual);

@@ -55,27 +55,33 @@ namespace CustomListProject
 
         public bool Remove(T item)
         {
+            //compare index to item to remove
             //if item already exists in list, remove it 
             //shift remaining items to remove gaps
-            
+
+            T[] reducedArray = new T[count];
+
             for (int i = 0; i < count; i++)
             {
                 if (array[i].Equals(item))
                 {
-                    count--;
-                    ShiftItems(i);
+                    ResizeArray(i);
                     return true;
                 }
+                else
+                    reducedArray[i] = array[i];
+                                 
             }
             return false;
         }
 
-        public void ShiftItems(int currentIndex)
-        {
-            for (int i = currentIndex; i < count; i++)
+        public void ResizeArray(int index)
+            {
+            for (int i = index; i < array.Length - 1; i++)
             {
                 array[i] = array[i + 1];
             }
-        }
+            Array.Resize(ref array, array.Length - 1);
+            }
     }
 }
