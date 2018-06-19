@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         private T[] array = new T[4];
         private int count;
         private int capacity;
-        
+        private T combine;
 
         public T this[int i]
         {
@@ -30,10 +31,33 @@ namespace CustomListProject
             set => capacity = value;
         }
 
+        public T Combine
+        {
+            get => combine;
+            set => combine = value;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return array[i];
+            }
+        }
         public CustomList()
         {
            
         }
+
+        public static CustomList<T> operator+ (CustomList<T> x, CustomList<T> y)
+        {
+            CustomList <T> list = new CustomList<T>();
+            //come back to finish this!
+            for (int i = 0; i < list.count; i++)
+                list.Add(x[i]);
+            return list;
+        }
+
         public void Add(T item)
         {
             if (count == capacity)
@@ -65,8 +89,7 @@ namespace CustomListProject
                     return true;
                 }
                 else
-                    reducedArray[i] = array[i];
-                                 
+                    reducedArray[i] = array[i];                          
             }
             return false;
         }
@@ -80,11 +103,6 @@ namespace CustomListProject
             Array.Resize(ref array, array.Length - 1);
             }
 
-        //public override string ToString()
-        //{
-            //return base.ToString();
-        //}
-
         public override string ToString()
         {
             string arrayString = "";
@@ -96,5 +114,7 @@ namespace CustomListProject
 
             return arrayString;
         }
+
+        
     }
 }

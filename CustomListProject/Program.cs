@@ -10,31 +10,13 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-            //List<int> builtInList = new List<int>();
-            //builtInList.Add(15);
-            //builtInList.Add(16);
-            //builtInList.Add(17);
-            //builtInList.Add(18);
-            //builtInList.Add(19);
-            //builtInList.Add(20);
-            //builtInList.Remove(18);
+            CustomList<int> customList = new CustomList<int>();
+            {
+            foreach(int item in customList)
+                {
 
-            CustomList<char> list = new CustomList<char>();
-
-            // Act
-            list.Add('M');
-            list.Add('m');
-            list.Add('m');
-            list.Add(' ');
-            list.Add('c');
-            list.Add('o');
-            list.Add('f');
-            list.Add('f');
-            list.Add('e');
-            list.Add('e');
-
-            list.ToString();
-
+                }
+            }
         }
     }
 }
