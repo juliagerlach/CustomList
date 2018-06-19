@@ -80,9 +80,21 @@ namespace CustomListProject
             Array.Resize(ref array, array.Length - 1);
             }
 
+        //public override string ToString()
+        //{
+            //return base.ToString();
+        //}
+
         public override string ToString()
         {
-            return base.ToString();
+            string arrayString = "";
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                arrayString += array[i];
+            }
+
+            return arrayString;
         }
     }
 }

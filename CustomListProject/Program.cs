@@ -19,25 +19,22 @@ namespace CustomListProject
             //builtInList.Add(20);
             //builtInList.Remove(18);
 
-            CustomList<int> nums = new CustomList<int>();
+            CustomList<char> list = new CustomList<char>();
 
             // Act
-            nums.Add(2);
-            nums.Add(4);
-            nums.Add(6);
-            nums.Add(8);
-            nums.Add(10);
-            nums[0].ToString();
-            nums[1].ToString();
-            nums[2].ToString();
-            nums[3].ToString();
-            nums[4].ToString();
-            for (int i = 0; i < nums.Count; i++)
-            {
-                Console.WriteLine(nums.ToString());
-                Console.ReadLine();
-            }
-            
+            list.Add('M');
+            list.Add('m');
+            list.Add('m');
+            list.Add(' ');
+            list.Add('c');
+            list.Add('o');
+            list.Add('f');
+            list.Add('f');
+            list.Add('e');
+            list.Add('e');
+
+            list.ToString();
+
         }
     }
 }

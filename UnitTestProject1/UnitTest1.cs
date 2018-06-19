@@ -255,9 +255,7 @@ namespace UnitTestProject1
             // Assert
             Assert.IsTrue(expected == actual);
         }
-
-        
-
+    
         [TestMethod]
         public void ToStringOverride_ConvertIndexToString()
         {
@@ -273,6 +271,66 @@ namespace UnitTestProject1
             string actual = nums[0].ToString();
 
             // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToStringOverride_ConvertListToString()
+        {
+            //Arrange
+            CustomList<int> nums = new CustomList<int>();
+            string expected = "246810000";
+
+            // Act
+            nums.Add(2);
+            nums.Add(4);
+            nums.Add(6);
+            nums.Add(8);
+            nums.Add(10);
+            
+            string actual = nums.ToString();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_CharsList()
+        {
+            CustomList<char> list = new CustomList<char>();
+            string expected = "Mmmmm coffee";
+
+            list.Add('M');
+            list.Add('m');
+            list.Add('m');
+            list.Add('m');
+            list.Add('m');
+            list.Add(' ');
+            list.Add('c');
+            list.Add('o');
+            list.Add('f');
+            list.Add('f');
+            list.Add('e');
+            list.Add('e');
+
+            string actual = list.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_StringList()
+        {
+            CustomList<string> list = new CustomList<string>();
+            string expected = "Good day to you.";
+
+            list.Add("Good ");
+            list.Add("day ");
+            list.Add("to ");
+            list.Add("you.");
+
+            string actual = list.ToString();
+
             Assert.AreEqual(expected, actual);
         }
     }
