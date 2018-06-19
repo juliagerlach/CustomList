@@ -256,20 +256,28 @@ namespace UnitTestProject1
             Assert.IsTrue(expected == actual);
         }
 
+        
+
         [TestMethod]
-        public void ToStringOverride_InfoHereAboutTest()
+        public void ToStringOverride_ConvertIndexToString()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
+            CustomList<int> nums = new CustomList<int>();
+            string expected = "2";
 
             // Act
-            
+            nums.Add(2);
+            nums.Add(4);
+            nums.Add(6);
+            nums[0].ToString();
+            string actual = nums[0].ToString();
 
             // Assert
-            
+            Assert.AreEqual(expected, actual);
         }
     }
 }
+
         
       
         
