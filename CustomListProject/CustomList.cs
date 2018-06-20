@@ -13,6 +13,7 @@ namespace CustomListProject
         private int count;
         private int capacity;
         private T combine;
+        private CustomList<T> x;
 
         public T this[int i]
         {
@@ -49,12 +50,32 @@ namespace CustomListProject
            
         }
 
+        public CustomList(CustomList<T> x)
+        {
+            this.x = x;
+        }
+
         public static CustomList<T> operator+ (CustomList<T> x, CustomList<T> y)
         {
             CustomList <T> list = new CustomList<T>();
             //come back to finish this!
             for (int i = 0; i < list.count; i++)
                 list.Add(x[i]);
+
+            for (int i = 0; i < list.count; i++)
+                list.Add(y[i]);
+            return list;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> x, CustomList<T> y)
+        {
+            CustomList<T> list = new CustomList<T>();
+            //come back to finish this!
+            for (int i = 0; i < list.count; i++)
+                list.Remove(x[i]);
+
+            for (int i = 0; i < list.count; i++)
+                list.Remove(y[i]);
             return list;
         }
 
@@ -85,7 +106,7 @@ namespace CustomListProject
             {
                 if (array[i].Equals(item))
                 {
-                    ResizeArray(i);
+                    ShiftArray(i);
                     return true;
                 }
                 else
@@ -94,7 +115,7 @@ namespace CustomListProject
             return false;
         }
 
-        public void ResizeArray(int index)
+        public void ShiftArray(int index)
             {
             for (int i = index; i < array.Length - 1; i++)
             {
@@ -115,6 +136,53 @@ namespace CustomListProject
             return arrayString;
         }
 
-        
+        public void Zip(CustomList<T> oddNumbers, CustomList<T> evenNumbers)
+        {
+            int oddCount = oddNumbers.Count;
+            int evenCount = Count;
+            count += oddCount;
+            T[] newArray = new T[Count];
+            
+
+            for (int i = 0; i < Count; i++)
+            {
+                if(oddCount == 3)
+                {
+                    newArray[i] = oddNumbers[i];
+                    oddCount--;
+                }
+                else if (evenCount == 3)
+                {
+                    newArray[i] = evenNumbers[i - 1];
+                    evenCount--;
+                }
+                else if (oddCount ==2)
+                {
+                    newArray[i] = oddNumbers[i -1];
+                    oddCount--;
+                }
+                else if (evenCount == 2)
+                {
+                    newArray[i] = evenNumbers[i - 2];
+                    evenCount--;
+                }
+                else if (oddCount == 1)
+                {
+                    newArray[i] = oddNumbers[i - 2];
+                    oddCount--;
+                }
+                else if (evenCount == 1)
+                {
+                    newArray[i] = evenNumbers[i - 3];
+                    evenCount--;
+                }
+                else
+                {
+
+                }
+            }
+            count = newArray.Length;
+            array = newArray;
+        }
     }
 }

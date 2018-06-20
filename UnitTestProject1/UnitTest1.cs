@@ -333,6 +333,21 @@ namespace UnitTestProject1
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Zip_NumberLists()
+        {
+            CustomList<int> oddNumbers = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> evenNumbers = new CustomList<int>() { 2, 4, 6 };
+            oddNumbers.Zip(oddNumbers, evenNumbers);
+            CustomList<int> expected = new CustomList<int>();
+
+
+            CustomList<int> actual = oddNumbers;
+
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 

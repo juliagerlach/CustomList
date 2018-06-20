@@ -12,11 +12,14 @@ namespace CustomListProject
         {
             CustomList<int> customList = new CustomList<int>();
             {
-            foreach(int item in customList)
+                foreach (int item in customList)
                 {
-
+                    Console.WriteLine(item);
                 }
+                Console.ReadLine();
+
             }
-        }
+        }    
+        
     }
 }
