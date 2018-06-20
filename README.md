@@ -1,1 +1,1 @@
-# CustomList
+This Custom List is my attempt at writing several methods to simulate the C# built-in List class. Methods include .Add, .Remove, .ToString, and .Zip. The list is indexed and iterable, the + and - operators can be overloaded, and there is a Count property. I attempted to use SOLID design principles, C# best practices, and good naming conventions. I made several tests for most methods, though I only managed one for the .Zip method and it is currently not passing. At the time of submittal, Visual Studio reported no erros in my code.
